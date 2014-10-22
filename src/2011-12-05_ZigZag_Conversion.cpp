@@ -62,28 +62,34 @@ using std::string;
 
 class Solution_ZigZag_Conversion {
 public:
-    void convert(string s, int nRows) {
+    string convert(string s, int nRows) {
         int i = 0, j = 0;
         int len = s.length();
         int k = (int) ceil((double) len / (2 * nRows - 2));
 
-        printf("after:");
+        if (nRows == 1)
+            return s;
+
+        string zigzag = string(len, '\0');
+        int m = 0;
         for (i = 0; i < nRows; i++) {
             for (j = 0; j < k; j++) {
                 int a = j * (2 * nRows - 2) + i;
                 int b = j * (2 * nRows - 2) + i + 2 * (nRows - i - 1);
                 if ((a < len) && (a < j * (2 * nRows - 2) + 2 * nRows -2)) {
-                    printf("%c", s[a]);
+                    zigzag[m] = s[a];
+                    m++;
                 }
 
                 if ((b < len) && (b > a) &&
                         (b < j * (2 * nRows - 2) + 2 * nRows - 2)) {
-                    printf("%c", s[b]);
+                    zigzag[m] = s[b];
+                    m++;
                 }
             }  // for
         }  // for
 
-        printf("\n");
+        return zigzag;
     }
 };
 
@@ -92,7 +98,8 @@ int main(int argc, char *argv[]) {
     int nRows = 6;
     string s = "abcdefghijklmnopqrstuvwxyz";
     printf("before:nRows = %d, string = %s\n", nRows, s.c_str());
-    zc.convert(s, nRows);
+    string zigzag = zc.convert(s, nRows);
+    printf("after: nRows = %d, string = %s\n", nRows, zigzag.c_str());
 
     return 0;
 }
