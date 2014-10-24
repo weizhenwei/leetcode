@@ -38,7 +38,7 @@
  * The brackets must close in the correct order, "()" and "()[]{}"
  * are all valid but "(]" and "([)]" are not.
  *
- * Date: 2014.10.21
+ * Date: 2014.10.23
  *
  * Author: weizhenwei <weizhenwei1988@gmail.com>
  *

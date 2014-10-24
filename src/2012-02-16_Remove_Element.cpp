@@ -28,20 +28,15 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * File: 2011-02-16_Remove_Duplicates_from_Sorted_Array.cpp
+ * File: 2011-02-16_Remove_Element.cpp
  *
  *
- * Brief: https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
- * Given a sorted array, remove the duplicates in place such that each element
- * appear only once and return the new length.
+ * Brief: https://oj.leetcode.com/problems/remove-element/
+ * Given an array and a value, remove all instances of that value in place and
+ * return the new length.
  *
- * Do not allocate extra space for another array, you must do this in place with
- * constant memory.
- *
- * For example,
- * Given input array A = [1,1,2],
- *
- * Your function should return length = 2, and A is now [1,2].
+ * The order of elements can be changed. It doesn't matter what you leave beyond
+ * the new length.
  *
  *
  * Date: 2014.10.24
@@ -53,36 +48,30 @@
 
 #include <stdio.h>
 
-class Solution_Remove_Duplicates_from_Sorted_Array {
+class Solution_Remove_Element {
 public:
-    int removeDuplicates(int A[], int n) {
-        if (n == 1)
-            return n;
-        if (n == 2) {
-            if (A[0] == A[1])
-                return 1;
-            else
-                return 2;
-        }
+    int removeElement(int A[], int n, int elem) {
+        if (n == 1 && A[0] == elem)
+            return 0;
 
         int i = 0;
         int newn = n;
         int same = 0;
         int start = 0;
-        for (i = 0; i < n - 1; i++) {
-            if (A[i] == A[i + 1]) {
+        for (i = 0; i < n; i++) {
+            if (A[i] == elem) {
                 same++;
             } else {
-                start++;
-                A[start] = A[i + 1];
+                A[start] = A[i];
                 newn -= same;
                 same = 0;
+                start++;
             }
         }
         if( same != 0) {
-            start++;
-            A[start] = A[i + 1];
+            A[start] = A[i];
             newn -= same;
+            start++;
         }
 
         return newn;
@@ -100,23 +89,33 @@ void print_array(int A[], int n) {
 }
 
 int main(int argc, char *argv[]) {
-    Solution_Remove_Duplicates_from_Sorted_Array solution;
+    Solution_Remove_Element solution;
 
     int n = 0;
-    int a[13] = {1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6};
+    int a[13] = {1, 1, 2, 2, 2, 3, 2, 2, 4, 5, 2, 2, 2};
     print_array(a, 13);
-    n = solution.removeDuplicates(a, 13);
+    n = solution.removeElement(a, 13, 2);
     print_array(a, n);
 
     int b[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     print_array(b, 10);
-    n = solution.removeDuplicates(b, 10);
+    n = solution.removeElement(b, 10, 3);
     print_array(b, n);
 
     int c[3] = {1, 1, 1};
     print_array(c, 3);
-    n = solution.removeDuplicates(c, 3);
+    n = solution.removeElement(c, 3, 1);
     print_array(c, n);
+
+    int d[4] = {3, 1, 1, 1};
+    print_array(d, 4);
+    n = solution.removeElement(d, 4, 1);
+    print_array(d, n);
+
+    int e[4] = {1, 1, 1, 3};
+    print_array(e, 4);
+    n = solution.removeElement(e, 4, 1);
+    print_array(e, n);
 
     return 0;
 }
