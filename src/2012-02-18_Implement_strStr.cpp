@@ -88,44 +88,44 @@ int main(int argc, char *argv[]) {
     char *needle = NULL;
     char *result = NULL;
 
-    haystack = "Hello, world!";
-    needle = "";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "Hello, world!";
-    needle = "H";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"H";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "Hello, world!";
-    needle = "Ht";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"Ht";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "Hello, world!";
-    needle = "or";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"or";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "Hello, world!";
-    needle = "ort";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"ort";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "Hello, world!";
-    needle = "!";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"!";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
 
-    haystack = "Hello, world!";
-    needle = "\n";
+    haystack = (char *)"Hello, world!";
+    needle = (char *)"\n";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 
-    haystack = "";
-    needle = "Hello";
+    haystack = (char *)"";
+    needle = (char *)"Hello";
     result = solution.strStr(haystack, needle);
     print_result(haystack, needle, result);
 

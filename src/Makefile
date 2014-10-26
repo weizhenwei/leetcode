@@ -1,5 +1,6 @@
 CXX = g++
-CXXFLAGS = -g -I. -Wall
+# CXXFLAGS = -g -I. -Wall
+CXXFLAGS = -g -I.
 
 SRCS = 2011-03-13_Two_Sum.cpp \
        2011-05-15_Longest_Substring_Without_Repeating_Characters.cpp \
@@ -16,7 +17,9 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-02-12_Generate_Parentheses.cpp \
        2012-02-14_Swap_Nodes_in_Pairs.cpp \
        2012-02-16_Remove_Duplicates_from_Sorted_Array.cpp \
-       2012-02-16_Remove_Element.cpp
+       2012-02-16_Remove_Element.cpp \
+       2012-02-18_Implement_strStr.cpp \
+       2012-02-23_Substring_with_Concatenation_of_All_Words.cpp
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
