@@ -14,11 +14,12 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-01-08_Container_With_Most_Water.cpp \
        2012-01-27_Remove_Nth_Node_From_End_of_List.cpp \
        2012-01-30_Valid_Parentheses.cpp \
-       2012-02-12_Generate_Parentheses.cpp \
+       2012-02-13_Merge_k_Sorted_Lists.cpp \
        2012-02-14_Swap_Nodes_in_Pairs.cpp \
+       2012-02-15_Reverse_Nodes_in_k-Group.cpp \
        2012-02-16_Remove_Duplicates_from_Sorted_Array.cpp \
        2012-02-16_Remove_Element.cpp \
-	   2012-02-18_Divide_Two_Integers.cpp \
+       2012-02-18_Divide_Two_Integers.cpp \
        2012-02-18_Implement_strStr.cpp \
        2012-02-23_Substring_with_Concatenation_of_All_Words.cpp
 
