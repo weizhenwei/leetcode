@@ -22,7 +22,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-02-18_Divide_Two_Integers.cpp \
        2012-02-18_Implement_strStr.cpp \
        2012-02-23_Substring_with_Concatenation_of_All_Words.cpp \
-       2012-03-02_Search_in_Rotated_Sorted_Array.cpp
+       2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
+       2012-04-19_Search_in_Rotated_Sorted_Array_II.cpp
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
