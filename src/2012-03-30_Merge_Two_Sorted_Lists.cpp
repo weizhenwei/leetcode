@@ -36,7 +36,7 @@
  * should be made by splicing together the nodes of the first two lists.
  *
  *
- * Date: 2014.10.27
+ * Date: 2014.10.29
  *
  * Author: weizhenwei <weizhenwei1988@gmail.com>
  *
