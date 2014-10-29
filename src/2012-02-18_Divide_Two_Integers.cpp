@@ -41,69 +41,69 @@
  * *****************************************************************************
  */
 
+#include <assert.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stack>
-
-using std::stack;
 
 class Solution_Divide_Two_Integers {
 public:
     int divide(int dividend, int divisor) {
-        if (dividend == 0) {
+        if (dividend == 0)
             return 0;
-        }
-        if (divisor == 1) {
-            return dividend;
-        } else if (divisor == -1) {
-            return 0 - dividend;
-        }
-        
-        int result = 0;
-        int ddividend = dividend;
-        int ddivisor = divisor;
-        int ssignal = 0;
+        long long int new_dividend;
+        long long int new_divisor;
+        int sign = 0;
         if (dividend < 0) {
-            ddividend = 0 - dividend;
-            ssignal = -1;
+            new_dividend = llabs(dividend);
+            sign = -1;
+        } else {
+            new_dividend = dividend;
         }
-        if (divisor < 0) {
-            ddivisor = 0 - divisor;
-            if (ssignal == -1) {
-                ssignal = 0;
-            } else {
-                ssignal = -1;
-            }
-        }
-        
-        stack<int> divs;
-        stack<int> intevals;
-        int inteval = 1;
-        while (ddividend >= ddivisor) {
-            result += inteval;
-            ddividend -= ddivisor;
-            divs.push(ddivisor);
-            intevals.push(inteval);
 
-            if (ddividend > ddivisor + ddivisor) {
-                ddivisor += ddivisor;
-                inteval += inteval;
+        if (divisor < 0) {
+            new_divisor = llabs(divisor);
+            if (sign == -1) {
+                sign = 0;
             } else {
-                while (ddividend > 0 && ddividend < ddivisor) {
-                    if (!divs.empty()) {
-                        ddivisor = divs.top();
-                        inteval = intevals.top();
-                        divs.pop();
-                        intevals.pop();
-                    } else {
-                        break;
-                    }
-                }  // while
+                sign = -1;
             }
-        }  // while
+        } else {
+            new_divisor = divisor;
+        }
+
+        if (new_divisor == 1) {
+            if (sign == -1) {
+                return -new_dividend;
+            } else {
+                return  new_dividend;
+            }
+        }
+
+        int i = 0;
+        long long int bitmap[32];
+        bitmap[0] = new_divisor;
+        for (i = 1; i < 32; i++) {
+            bitmap[i] = new_divisor << i;
+            if (bitmap[i] > new_dividend)
+                break;
+        }
+
+        i--;
+        int result = 0;
+        while (i >= 0) {
+            while (new_dividend >= bitmap[i]) {
+                result += 1 << i;
+                new_dividend -= bitmap[i];
+            }
+
+            while (new_dividend < bitmap[i]) {
+                i--;
+            }
+        }
         
-        if (ssignal == -1) {
-            return 0 - result;
+        if (sign == -1) {
+            return -result;
         } else {
             return result;
         }
@@ -144,6 +144,12 @@ int main(int argc, char *argv[]) {
     printf("dividend = %d, divisor = %d, result = %d\n",
             dividend, divisor, result);
 
+    dividend = -1219;
+    divisor = 3;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
+
 
     dividend = -2147483648;
     divisor = 2;
@@ -151,11 +157,35 @@ int main(int argc, char *argv[]) {
     printf("dividend = %d, divisor = %d, result = %d\n",
             dividend, divisor, result);
 
-    long int a =  (long int) -2147483648;
-    // long int a =  -214;
-    long int b = abs(a);
-    long int c = abs(a);
-    printf("a = %ld, b = %ld, c = %ld\n", a, b, c);
+    dividend = -2147483648;
+    divisor = 1;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
+
+    dividend = -2147483648;
+    divisor = -1;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
+
+    dividend = 5;
+    divisor = 2;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
+
+    dividend = 2;
+    divisor = 2;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
+
+    dividend = -2147483648;
+    divisor = -2147483648;
+    result = solution.divide(dividend, divisor);
+    printf("dividend = %d, divisor = %d, result = %d\n",
+            dividend, divisor, result);
 
     return 0;
 }
