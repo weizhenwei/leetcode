@@ -14,6 +14,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-01-08_Container_With_Most_Water.cpp \
 	   2012-01-17_3Sum.cpp \
 	   2012-01-17_Longest_Common_Prefix.cpp \
+	   2012-01-18_3Sum_Closest.cpp \
 	   2012-01-26_4Sum.cpp \
        2012-01-27_Remove_Nth_Node_From_End_of_List.cpp \
        2012-01-30_Valid_Parentheses.cpp \
