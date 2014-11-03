@@ -28,6 +28,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-02-23_Substring_with_Concatenation_of_All_Words.cpp \
 	   2012-03-02_Search_for_a_Range.cpp \
 	   2012-03-03_Search_Insert_Position.cpp \
+	   2012-03-08_First_Missing_Positive.cpp \
 	   2012-03-12_Multiply_Strings.cpp \
        2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
 	   2012-03-05_Count_and_Say.cpp \
@@ -39,7 +40,9 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-02_Plus_One.cpp \
 	   2012-04-03_Climbing_Stairs.cpp \
 	   2012-04-19_Remove_Duplicates_from_Sorted_Array_II.cpp \
-       2012-04-19_Search_in_Rotated_Sorted_Array_II.cpp
+       2012-04-19_Search_in_Rotated_Sorted_Array_II.cpp \
+       2012-04-22_Remove_Duplicates_from_Sorted_List.cpp \
+       2012-04-22_Remove_Duplicates_from_Sorted_List_II.cpp
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
