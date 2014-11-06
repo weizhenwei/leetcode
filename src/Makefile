@@ -45,11 +45,15 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-19_Search_in_Rotated_Sorted_Array_II.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List_II.cpp \
+       2012-04-30_Partition_List.cpp \
+       2012-05-20_Merge_Sorted_Array.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2013-10-01_Single_Number.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
-       2013-11-02_Reorder_List.cpp
+       2013-11-02_Reorder_List.cpp \
+       2013-11-12_Insertion_Sort_List.cpp \
+       2013-11-16_Sort_List.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
