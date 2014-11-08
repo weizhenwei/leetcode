@@ -28,17 +28,17 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * File: 2012-09-03_Same_Tree.cpp
+ * File: 2012-10-09_Minimum_Depth_of_Binary_Tree.cpp
  *
  *
- * Brief: https://oj.leetcode.com/problems/same-tree/
- * Given two binary trees, write a function to check if they are equal or not.
+ * Brief: https://oj.leetcode.com/problems/minimum-depth-of-binary-tree/
+ * Given a binary tree, find its minimum depth.
  *
- * Two binary trees are considered equal if they are structurally identical and
- * the nodes have the same value.
+ * The minimum depth is the number of nodes along the shortest path from the
+ * root node down to the nearest leaf node.
  *
  *
- * Date: 2014.11.07
+ * Date: 2014.11.08
  *
  * Author: weizhenwei <weizhenwei1988@gmail.com>
  *
@@ -55,40 +55,45 @@ typedef struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 }TreeNode;
 
-class Solution_Same_Tree {
+class Solution_Minimum_Depth_of_Binary_Tree {
 public:
-    bool isSameTree(TreeNode *p, TreeNode *q) {
-        if (p == NULL && q == NULL) {
-            return true;
-        } else if (p == NULL || q == NULL) {
-            return false;
+    int minDepth(TreeNode *root) {
+        if (root == NULL) {
+            return 0;
+        }
+        if (root->left == NULL && root->right == NULL) {
+            return 1;
         }
         
-        if (p->val == q->val) {
-            bool same1 = isSameTree(p->left, q->left);
-            bool same2 = isSameTree(p->right, q->right);
-            return same1 && same2;
-        } else {
-            return false;
+        int left = minDepth(root->left);
+        int right = minDepth(root->right);
+        if (left == 0) {
+            return right + 1;
         }
+        if (right == 0) {
+            return left + 1;
+        }
+        
+        return left < right ? left + 1 : right + 1;   
     }
 };
 
 int main(int argc, char *argv[]) {
-    Solution_Same_Tree solution;
+    Solution_Minimum_Depth_of_Binary_Tree solution;
 
     TreeNode *p = new TreeNode(1);;
     TreeNode *q = new TreeNode(1);;
-    bool same = solution.isSameTree(p, q);
-    printf("same = %d\n", same);
+    int same = solution.minDepth(p);
+    printf("min depth = %d\n", same);
 
     delete p;
     p = NULL;
-    same = solution.isSameTree(p, q);
-    printf("same = %d\n", same);
+    same = solution.minDepth(p);
+    printf("min depth = %d\n", same);
 
     delete q;
 
     return 0;
 }
+
 

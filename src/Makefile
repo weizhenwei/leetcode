@@ -50,6 +50,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2012-09-03_Same_Tree.cpp \
+       2012-09-29_Maximum_Depth_of_Binary_Tree.cpp \
+       2012-10-09_Minimum_Depth_of_Binary_Tree.cpp \
        2013-10-01_Single_Number.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
