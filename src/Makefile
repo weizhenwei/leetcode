@@ -56,6 +56,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
        2013-11-02_Reorder_List.cpp \
+       2013-11-05_Binary_Tree_Preorder_Traversal.cpp \
        2013-11-12_Insertion_Sort_List.cpp \
        2013-11-16_Sort_List.cpp \
        2014-03-05_Reverse_Words_in_a_String.cpp
