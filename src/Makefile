@@ -49,19 +49,31 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-30_Partition_List.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
+       2012-08-27_Binary_Tree_Inorder_Traversal.cpp \
        2012-09-03_Same_Tree.cpp \
+       2012-09-23_Symmetric_Tree.cpp \
+       2012-09-28_Binary_Tree_Level_Order_Traversal.cpp \
+       2012-09-28_Binary_Tree_Zigzag_Level_Order_Traversal.cpp \
        2012-09-29_Maximum_Depth_of_Binary_Tree.cpp \
-       2012-10-09_Minimum_Depth_of_Binary_Tree.cpp \
+       2012-10-01_Binary_Tree_Level_Order_Traversal_II.cpp \
        2013-10-01_Single_Number.cpp \
+       2012-10-02_Convert_Sorted_Array_to_Binary_Search_Tree.cpp \
+       2012-10-08_Balanced_Binary_Tree.cpp \
+       2012-10-09_Minimum_Depth_of_Binary_Tree.cpp \
+       2012-10-14_Flatten_Binary_Tree_to_Linked_List.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
+       2012-10-28_Populating_Next_Right_Pointers_in_Each_Node.cpp \
+       2012-10-28_Populating_Next_Right_Pointers_in_Each_Node_II.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
        2013-11-02_Reorder_List.cpp \
        2013-11-05_Binary_Tree_Preorder_Traversal.cpp \
+       2013-11-07_Binary_Tree_Postorder_Traversal.cpp \
        2013-11-12_Insertion_Sort_List.cpp \
        2013-11-16_Sort_List.cpp \
-       2014-03-05_Reverse_Words_in_a_String.cpp
-
-
+       2013-11-27_Evaluate_Reverse_Polish_Notation.cpp \
+       2014-03-05_Reverse_Words_in_a_String.cpp \
+       2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
+       2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp \
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
