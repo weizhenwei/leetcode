@@ -55,15 +55,20 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-09-28_Binary_Tree_Level_Order_Traversal.cpp \
        2012-09-28_Binary_Tree_Zigzag_Level_Order_Traversal.cpp \
        2012-09-29_Maximum_Depth_of_Binary_Tree.cpp \
+       2012-09-30_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal.cpp \
+       2012-09-30_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal.cpp \
        2012-10-01_Binary_Tree_Level_Order_Traversal_II.cpp \
        2013-10-01_Single_Number.cpp \
        2012-10-02_Convert_Sorted_Array_to_Binary_Search_Tree.cpp \
        2012-10-08_Balanced_Binary_Tree.cpp \
        2012-10-09_Minimum_Depth_of_Binary_Tree.cpp \
+       2012-10-13_Path_Sum.cpp \
+       2012-10-14_Path_Sum_II.cpp \
        2012-10-14_Flatten_Binary_Tree_to_Linked_List.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node_II.cpp \
+       2013-02-18_Sum_Root_to_Leaf_Numbers.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
        2013-11-02_Reorder_List.cpp \
        2013-11-05_Binary_Tree_Preorder_Traversal.cpp \
