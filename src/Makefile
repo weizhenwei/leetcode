@@ -42,6 +42,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-03_Climbing_Stairs.cpp \
        2012-04-03_Sqrt.cpp \
        2012-04-06_Search_a_2D_Matrix.cpp \
+       2012-04-18_Subsets.cpp \
        2012-04-19_Remove_Duplicates_from_Sorted_Array_II.cpp \
        2012-04-19_Search_in_Rotated_Sorted_Array_II.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List.cpp \
@@ -50,6 +51,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2012-08-27_Binary_Tree_Inorder_Traversal.cpp \
+       2012-08-31_Validate_Binary_Search_Tree.cpp \
        2012-09-03_Same_Tree.cpp \
        2012-09-23_Symmetric_Tree.cpp \
        2012-09-28_Binary_Tree_Level_Order_Traversal.cpp \
@@ -60,6 +62,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-10-01_Binary_Tree_Level_Order_Traversal_II.cpp \
        2013-10-01_Single_Number.cpp \
        2012-10-02_Convert_Sorted_Array_to_Binary_Search_Tree.cpp \
+       2012-10-02_Convert_Sorted_List_to_Binary_Search_Tree.cpp \
        2012-10-08_Balanced_Binary_Tree.cpp \
        2012-10-09_Minimum_Depth_of_Binary_Tree.cpp \
        2012-10-13_Path_Sum.cpp \
