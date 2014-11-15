@@ -69,6 +69,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-10-14_Path_Sum_II.cpp \
        2012-10-14_Flatten_Binary_Tree_to_Linked_List.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
+       src/2012-10-28_Pascals_Triangle.cpp \
+       src/2012-10-28_Pascals_Triangle_II.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node_II.cpp \
        2013-02-18_Sum_Root_to_Leaf_Numbers.cpp \
