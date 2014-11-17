@@ -33,8 +33,10 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
        2012-03-05_Count_and_Say.cpp \
        2012-03-19_Pow.cpp \
+       2012-03-24_Spiral_Matrix.cpp \
        2012-03-27_Length_of_Last_Word.cpp \
        2012-03-27_Rotate_list.cpp \
+       2012-03-27_Spiral_Matrix_II.cpp \
        2012-03-30_Merge_Two_Sorted_Lists.cpp \
        2012-04-02_Add_Binary.cpp \
        2012-04-02_Valid_Number.cpp \
@@ -49,6 +51,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List_II.cpp \
        2012-04-30_Partition_List.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
+       2012-06-25_Subsets_II.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2012-08-27_Binary_Tree_Inorder_Traversal.cpp \
        2012-08-31_Validate_Binary_Search_Tree.cpp \
@@ -69,10 +72,12 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-10-14_Path_Sum_II.cpp \
        2012-10-14_Flatten_Binary_Tree_to_Linked_List.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
-       src/2012-10-28_Pascals_Triangle.cpp \
-       src/2012-10-28_Pascals_Triangle_II.cpp \
+       2012-10-28_Pascals_Triangle.cpp \
+       2012-10-28_Pascals_Triangle_II.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node.cpp \
        2012-10-28_Populating_Next_Right_Pointers_in_Each_Node_II.cpp \
+       2012-10-29_Triangle.cpp \
+       2013-01-12_Valid_Palindrome.cpp \
        2013-02-18_Sum_Root_to_Leaf_Numbers.cpp \
        2013-10-30_Linked_List_Cycle_II.cpp \
        2013-11-02_Reorder_List.cpp \
@@ -83,7 +88,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2013-11-27_Evaluate_Reverse_Polish_Notation.cpp \
        2014-03-05_Reverse_Words_in_a_String.cpp \
        2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
-       2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp \
+       2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp
+
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
