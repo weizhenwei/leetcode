@@ -32,6 +32,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-12_Multiply_Strings.cpp \
        2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
        2012-03-05_Count_and_Say.cpp \
+       2012-03-17_Rotate_Image.cpp \
        2012-03-19_Pow.cpp \
        2012-03-21_Maximum_Subarray.cpp \
        2012-03-24_Spiral_Matrix.cpp \
@@ -39,6 +40,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-27_Rotate_list.cpp \
        2012-03-27_Spiral_Matrix_II.cpp \
        2012-03-28_Unique_Paths.cpp \
+       2012-03-28_Unique_Paths_II.cpp \
        2012-03-30_Merge_Two_Sorted_Lists.cpp \
        2012-04-02_Add_Binary.cpp \
        2012-04-02_Valid_Number.cpp \
@@ -53,6 +55,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List_II.cpp \
        2012-04-30_Partition_List.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
+       2012-06-25_Decode_ways.cpp \
        2012-06-25_Subsets_II.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2012-08-27_Binary_Tree_Inorder_Traversal.cpp \
