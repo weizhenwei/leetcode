@@ -118,6 +118,7 @@ public:
         return result;
     }
 
+    // try but failed!
     string getPermutationK(int n, int k) {
         assert(n >= 1 && n <= 9);
         if (k == 1) {
@@ -129,8 +130,10 @@ public:
         }
 
         vector<int> factorial;
+        vector<int> remaining;
         factorial.push_back(1);
         for (int i = 1; i <= n; i++) {
+            remaining.push_back(i);
             int prev = factorial[i-1];
             factorial.push_back(prev * i);
         }
@@ -233,6 +236,21 @@ int main(int argc, char *argv[]) {
 
     n = 4;
     k = 24;
+    result = solution.getPermutation(n, k);
+    printf("n = %d, k = %d, result= %s\n", n, k, result.c_str());
+
+    n = 9;
+    k = 362880;
+    result = solution.getPermutation(n, k);
+    printf("n = %d, k = %d, result= %s\n", n, k, result.c_str());
+
+    n = 9;
+    k = 6280;
+    result = solution.getPermutation(n, k);
+    printf("n = %d, k = %d, result= %s\n", n, k, result.c_str());
+
+    n = 6;
+    k = 280;
     result = solution.getPermutation(n, k);
     printf("n = %d, k = %d, result= %s\n", n, k, result.c_str());
 
