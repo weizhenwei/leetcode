@@ -98,7 +98,6 @@ public:
 
         return permutations;
     }
-
     string getPermutationStupid(int n, int k) {
         vector<int> num;
         for (int i = 1; i <= n; i++) {
@@ -118,8 +117,7 @@ public:
         return result;
     }
 
-    // try but failed!
-    string getPermutationK(int n, int k) {
+    string getPermutation(int n, int k) {
         assert(n >= 1 && n <= 9);
         if (k == 1) {
             string result;
@@ -147,40 +145,31 @@ public:
 
         string result;
         for (int i = n; i >= 1; i--) {
-            if (k / factorial[i-1] == 0) {
-                result.push_back(n - i + 1 + '0');
-            } else if (k % factorial[i-1] == 0) {
-                result.push_back(n - i + k / factorial[i-1] + '0');
+            if (k % factorial[i-1] == 0) {
+                if (k == 0) {
+                    for (int j = remaining.size() - 1; j >= 0; j--) {
+                        result.push_back(remaining[j] + '0');
+                    }
+                } else {
+                    int index = k / factorial[i-1] - 1;
+                    int target = remaining[index];
+                    result.push_back(target + '0');
+                    remaining.erase(remaining.begin() + index);
+                    for (int j = remaining.size() - 1; j >= 0; j--) {
+                        result.push_back(remaining[j] + '0');
+                    }
+                }
+                return result;
             } else {
-                result.push_back(n - i + 1 + k / factorial[i-1] + '0');
+                int index = k / factorial[i-1];
+                int target = remaining[index];
+                result.push_back(target + '0');
+                remaining.erase(remaining.begin() + index);
+                k = k % factorial[i-1];
             }
-            k = k % factorial[i-1];
-        }
+        }  // for
 
         return result;
-    }
-
-    // originate
-    // from:https://oj.leetcode.com/discuss/11023/most-concise-c-solution-minimal-memory-required
-    string getPermutation(int n, int k) {
-        int i,j,f=1;
-        // left part of s is partially formed permutation, right part is the leftover chars.
-        string s(n,'0');
-        for(i=1;i<=n;i++){
-            f*=i;
-            s[i-1]+=i; // make s become 1234...n
-        }
-        for(i=0,k--;i<n;i++){
-            f/=n-i;
-            j=i+k/f; // calculate index of char to put at s[i]
-            char c=s[j];
-            // remove c by shifting to cover up (adjust the right part).
-            for(;j>i;j--)
-                s[j]=s[j-1];
-            k%=f;
-            s[i]=c;
-        }
-        return s;
     }
 };
 
