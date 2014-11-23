@@ -12,6 +12,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-01-04_Palindrome_Number.cpp \
        2012-01-08_Regular_Expression_Matching.cpp \
        2012-01-08_Container_With_Most_Water.cpp \
+       2012-01-15_Integer_to_Roman.cpp \
+       2012-01-15_Roman_to_Integer.cpp \
        2012-01-17_3Sum.cpp \
        2012-01-17_Longest_Common_Prefix.cpp \
        2012-01-18_3Sum_Closest.cpp \
@@ -105,6 +107,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2014-03-05_Reverse_Words_in_a_String.cpp \
        2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
        2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp
+
 
 OBJECTS = $(SRCS:%.cpp=%.o)
 TARGETS = $(SRCS:%.cpp=%)  
