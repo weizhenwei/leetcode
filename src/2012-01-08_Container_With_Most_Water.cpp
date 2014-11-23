@@ -48,14 +48,16 @@
  * *****************************************************************************
  */
 
+#include <algorithm>
 #include <stdio.h>
 #include <vector>
 
+using std::min;
 using std::vector;
 
 class Solution_Container_With_Most_Water {
 public:
-    int maxArea(vector<int> &height) {
+    int maxAreaStupid(vector<int> &height) {
         if (height.size() <= 1)
             return 0;
         if (height.size() == 2) {
@@ -113,7 +115,38 @@ public:
 
         return result;
     }
+
+    // idea originates from:
+    // https://oj.leetcode.com/discuss/14610/very-simple-o-n-solution
+    int maxArea(vector<int> &height) {
+        int start = 0;
+        int end = height.size() - 1;
+        int max = 0;
+        while (start < end) {
+            int tmp = (end - start) * min(height[end], height[start]);
+            if (max < tmp) {
+                max = tmp;
+            }
+
+            // possible situations where maxier may happen!
+            if (height[start] < height[end]) {
+                start++;
+            } else {
+                end--;
+            }
+        }  // while
+
+        return max;
+    }
 };
+
+static void print_vector(vector<int> &v) {
+    for (int i = 0; i < v.size(); i++) {
+        printf("%d ", v[i]);
+    }
+
+    printf("\n");
+}
 
 int main(int argc, char *argv[]) {
     Solution_Container_With_Most_Water solution;
@@ -122,20 +155,14 @@ int main(int argc, char *argv[]) {
 
     height.push_back(3);
     result = solution.maxArea(height);
+    print_vector(height);
     printf("maxArea = %d\n", result);
 
     height.clear();
     height.push_back(3);
     height.push_back(4);
     result = solution.maxArea(height);
-    printf("maxArea = %d\n", result);
-
-    height.clear();
-    height.push_back(3);
-    height.push_back(4);
-    height.push_back(5);
-    height.push_back(2);
-    result = solution.maxArea(height);
+    print_vector(height);
     printf("maxArea = %d\n", result);
 
     height.clear();
@@ -143,8 +170,18 @@ int main(int argc, char *argv[]) {
     height.push_back(4);
     height.push_back(5);
     height.push_back(2);
+    result = solution.maxArea(height);
+    print_vector(height);
+    printf("maxArea = %d\n", result);
+
+    height.clear();
+    height.push_back(3);
+    height.push_back(4);
+    height.push_back(5);
+    height.push_back(2);
     height.push_back(3);
     result = solution.maxArea(height);
+    print_vector(height);
     printf("maxArea = %d\n", result);
 
 
