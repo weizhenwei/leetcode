@@ -46,8 +46,12 @@
 #include <assert.h>
 #include <stdio.h>
 #include <limits.h>
+#include <algorithm>
 #include <vector>
 
+using std::make_heap;
+using std::push_heap;
+using std::pop_heap;
 using std::vector;
 
 // Definition for singly-linked list.
@@ -59,7 +63,7 @@ typedef struct ListNode {
 
 class Solution_Merge_k_Sorted_Lists {
 public:
-    ListNode *mergeKLists(vector<ListNode *> &lists) {
+    ListNode *mergeKListsStupid(vector<ListNode *> &lists) {
         if (lists.size() == 0)
             return NULL;
         if (lists.size() == 1)
@@ -111,6 +115,49 @@ public:
                 break;
             }
         } while (lists.size() != 0);
+
+        return head;
+    }
+
+
+    struct NodeCompare {
+        bool operator()(ListNode *a, ListNode *b) {
+            return a->val > b->val;
+        }
+    };
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
+        vector<ListNode *> heap;
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists[i] != NULL) {
+                heap.push_back(lists[i]);
+            }
+        }  // for
+
+        // make heap;
+        make_heap(heap.begin(), heap.end(), NodeCompare());
+
+        ListNode *head = NULL;
+        ListNode *current = NULL;
+        while (!heap.empty()) {
+            ListNode *min = heap.front();
+            pop_heap(heap.begin(), heap.end(), NodeCompare());
+            heap.pop_back();
+
+            if (!head) {
+                head = min;
+            }
+
+            if (current) {
+                current->next = min;
+            }
+            current = min;
+
+            if (min->next) {
+                min = min->next;
+                heap.push_back(min);
+                push_heap(heap.begin(), heap.end(), NodeCompare());
+            }
+        }  // while
 
         return head;
     }
