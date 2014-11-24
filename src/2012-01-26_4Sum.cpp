@@ -67,7 +67,7 @@ using std::vector;
 
 class Solution_fourSum {
 public:
-    vector<vector<int> > fourSum(vector<int> &num, int target) {
+    vector<vector<int> > fourSumStupid(vector<int> &num, int target) {
         vector<vector<int> > result;
         if (num.size() <= 3)
             return result;
@@ -138,6 +138,54 @@ public:
 
         return result;
     }
+
+    vector<vector<int> > fourSum(vector<int> &num, int target) {
+        vector<vector<int> > results;
+        if (num.size() < 4) {
+            return results;
+        }
+
+        sort(num.begin(), num.end());
+
+        vector<int> elem(4, 0);
+        for (int d = num.size() - 1; d >= 3; d--) {
+            if (d < (num.size() - 1) && num[d] == num[d+1]) {
+                continue;
+            }
+
+            elem[3] = num[d];
+            for (int c = d - 1; c >= 2; c--) {
+                if (c < (d - 1) && (num[c] == num[c+1])) {
+                    continue;
+                }
+                
+                elem[2] = num[c];
+                int twoSum = target - num[c] - num[d];
+                int start = 0;
+                int end = c - 1;
+                while (start < end) {
+                    if (num[start] + num[end] == twoSum) {  // got one;
+                        elem[0] = num[start];
+                        elem[1] = num[end];
+                        results.push_back(elem);
+
+                        do {  // continue iterate;
+                            start++;
+                            end--;
+                        } while (start < end
+                                && num[start] == num[start-1]
+                                && num[end] == num[end+1]);
+                    } else if (num[start] + num[end] > twoSum) {
+                        end--;
+                    } else {
+                        start++;
+                    }
+                }  // while
+            }  // for inner
+        }  // for outer
+
+        return results;
+    }
 };
 
 static void print_vector(vector<int> &v) {
@@ -175,42 +223,6 @@ int main(int argc, char *argv[]) {
     vector<vector<int> > result = solution.fourSum(num, 0);
     print_vector2(result);
 
-//     num.clear();
-//     num.push_back(-1);
-//     num.push_back(0);
-//     num.push_back(1);
-//     num.push_back(1);
-//     print_vector(num);
-//     result = solution.threeSum(num);
-//     print_vector2(result);
-// 
-//     num.clear();
-//     num.push_back(0);
-//     num.push_back(0);
-//     num.push_back(0);
-//     print_vector(num);
-//     result = solution.threeSum(num);
-//     print_vector2(result);
-// 
-//     num.clear();
-//     num.push_back(0);
-//     num.push_back(0);
-//     num.push_back(-1);
-//     num.push_back(1);
-//     num.push_back(1);
-//     print_vector(num);
-//     result = solution.threeSum(num);
-//     print_vector2(result);
-// 
-//     num.clear();
-//     num.push_back(0);
-//     num.push_back(0);
-//     num.push_back(0);
-//     num.push_back(0);
-//     num.push_back(0);
-//     print_vector(num);
-//     result = solution.threeSum(num);
-//     print_vector2(result);
-
     return 0;
 }
+
