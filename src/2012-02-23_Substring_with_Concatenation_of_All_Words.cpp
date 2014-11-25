@@ -28,7 +28,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * File: 2011-03-13_Substring_with_Concatenation_of_All_Words.cpp
+ * File: 2012-02-23_Substring_with_Concatenation_of_All_Words.cpp
  *
  *
  * Brief: https://oj.leetcode.com/problems
@@ -52,11 +52,13 @@
  */
 
 #include <stdio.h>
+#include <unordered_map>
 #include <map>
 #include <queue>
 #include <string>
 #include <vector>
 
+using std::unordered_map;
 using std::map;
 using std::pair;
 using std::queue;
@@ -65,7 +67,7 @@ using std::vector;
 
 class Solution_Substring_with_Concatenation_of_All_Words {
 public:
-    vector<int> findSubstring(string S, vector<string> &L) {
+    vector<int> findSubstringStupid(string S, vector<string> &L) {
         vector<int> result;
         if (L.size() == 0)
             return result;
@@ -169,6 +171,50 @@ public:
         }  // while
 
         return result;
+    }
+
+    // originate
+    // from:https://oj.leetcode.com/discuss/15587/a-concise-solution-in-c
+    vector<int> findSubstring(string S, vector<string> &L) {
+        vector<int> res;
+        int n = S.length();
+        if (n==0)
+            return res;
+
+        int cnt = L.size();
+        if (cnt == 0)
+            return res;
+        int wlen = L[0].length();
+        unordered_map<string, int> count;
+        unordered_map<string, int>::iterator it;
+        for (int i = 0; i < cnt; i++)
+            count[L[i]]++;
+
+        int i = 0;
+        int j = 0;
+        while (i < n && j < n) {
+            unordered_map<string, int> tmpcount = count;
+            int tmpcnt = cnt;
+            while (i + wlen * tmpcnt <= n
+                    && tmpcnt > 0
+                    && (it = tmpcount.find(S.substr(i,wlen))) != tmpcount.end()
+                    && it->second > 0) {
+                it->second--;
+                tmpcnt--;
+                i += wlen;
+            }
+
+            if(tmpcnt == 0) {
+                res.push_back(j);
+            }
+
+            j++;
+            i = j;
+            if(i + wlen * cnt > n)
+                break;
+        }
+
+        return res;
     }
 };
 
@@ -281,3 +327,4 @@ int main(int argc, char *argv[]) {
     print_int(result);
     return 0;
 }
+
