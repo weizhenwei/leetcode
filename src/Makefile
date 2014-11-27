@@ -112,7 +112,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2013-11-27_Evaluate_Reverse_Polish_Notation.cpp \
        2014-03-05_Reverse_Words_in_a_String.cpp \
        2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
-       2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp
+       2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp \
+       2014-11-27_Intersection_of_Two_Linked_Lists.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
