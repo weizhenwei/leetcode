@@ -35,11 +35,12 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-02_Search_for_a_Range.cpp \
        2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
        2012-03-03_Search_Insert_Position.cpp \
+       2012-03-05_Count_and_Say.cpp \
        2012-03-06_Combination_Sum.cpp  \
        2012-03-06_Combination_Sum_II.cpp \
        2012-03-08_First_Missing_Positive.cpp \
+       2012-03-10_Trapping_Rain_Water.cpp \
        2012-03-12_Multiply_Strings.cpp \
-       2012-03-05_Count_and_Say.cpp \
        2012-03-16_Permutations.cpp \
        2012-03-16_Permutations_II.cpp \
        2012-03-17_Rotate_Image.cpp \
