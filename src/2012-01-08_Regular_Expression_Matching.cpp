@@ -65,7 +65,7 @@
 
 class Solution_Regular_Expression_Matching {
 public:
-    bool isMatch(const char *s, const char *p) {
+    bool isMatchError(const char *s, const char *p) {
         const char *pp = s;
         const char *qq = p;
 
@@ -212,6 +212,23 @@ public:
 
         return false;
     }
+
+    // originate from:
+    // https://oj.leetcode.com/discuss/9405/the-shortest-ac-code
+    bool isMatch(const char *s, const char *p) {
+        for (char c = *p; c != 0; ++s, c = *p) {
+            if (*(p+1) != '*') {
+                p++;
+            } else if (isMatch(s, p+2)) {
+                return true;
+            }
+
+            if ((*s == 0) || ((c != '.') && (c != *s)))
+                return false;
+        }
+
+        return *s == 0;
+    }
 };
 
 static void testcase(const char *s, const char *p, bool expected) {
@@ -300,3 +317,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
