@@ -51,6 +51,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-27_Permutation_Sequence.cpp \
        2012-03-27_Rotate_list.cpp \
        2012-03-27_Spiral_Matrix_II.cpp \
+       2012-03-28_Minimum_Path_Sum.cpp \
        2012-03-28_Unique_Paths.cpp \
        2012-03-28_Unique_Paths_II.cpp \
        2012-03-30_Merge_Two_Sorted_Lists.cpp \
