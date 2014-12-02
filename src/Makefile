@@ -35,6 +35,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-02_Search_for_a_Range.cpp \
        2012-03-02_Search_in_Rotated_Sorted_Array.cpp \
        2012-03-03_Search_Insert_Position.cpp \
+       2012-03-03_Valid_Sudoku.cpp \
        2012-03-05_Count_and_Say.cpp \
        2012-03-06_Combination_Sum.cpp  \
        2012-03-06_Combination_Sum_II.cpp \
@@ -115,6 +116,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2014-03-05_Reverse_Words_in_a_String.cpp \
        2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
        2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp \
+       2014-11-09_Min_Stack.cpp \
        2014-11-27_Intersection_of_Two_Linked_Lists.cpp
 
 
