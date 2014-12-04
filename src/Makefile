@@ -46,9 +46,12 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-15_Wildcard_Matching.cpp \
        2012-03-16_Permutations.cpp \
        2012-03-16_Permutations_II.cpp \
+       2012-03-16_Jump_Game_II.cpp \
        2012-03-17_Rotate_Image.cpp \
+       2012-03-19_Anagrams.cpp \
        2012-03-19_Pow.cpp \
        2012-03-21_Maximum_Subarray.cpp \
+       2012-03-24_Jump_Game.cpp \
        2012-03-24_Spiral_Matrix.cpp \
        2012-03-27_Length_of_Last_Word.cpp \
        2012-03-27_Permutation_Sequence.cpp \
