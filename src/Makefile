@@ -1,6 +1,6 @@
 CXX = g++
 # CXXFLAGS = -g -I. -Wall
-CXXFLAGS = -g -I.
+CXXFLAGS = -g -I. -std=c++0x
 
 SRCS = 2011-03-13_Two_Sum.cpp \
        2011-05-15_Longest_Substring_Without_Repeating_Characters.cpp \
@@ -75,6 +75,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List.cpp \
        2012-04-22_Remove_Duplicates_from_Sorted_List_II.cpp \
        2012-04-30_Partition_List.cpp \
+       2012-05-20_Gray_Code.cpp \
        2012-05-20_Merge_Sorted_Array.cpp \
        2012-06-25_Decode_ways.cpp \
        2012-06-25_Subsets_II.cpp \
