@@ -50,6 +50,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-17_Rotate_Image.cpp \
        2012-03-19_Anagrams.cpp \
        2012-03-19_Pow.cpp \
+       2012-03-19_N-Queens.cpp \
+       2012-03-20_N-Queens_II.cpp \
        2012-03-21_Maximum_Subarray.cpp \
        2012-03-24_Jump_Game.cpp \
        2012-03-24_Spiral_Matrix.cpp \
