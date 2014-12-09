@@ -126,7 +126,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2014-10-15_Find_Minimum_in_Rotated_Sorted_Array.cpp \
        2014-10-20_Find_Minimum_in_Rotated_Sorted_Array_II.cpp \
        2014-11-09_Min_Stack.cpp \
-       2014-11-27_Intersection_of_Two_Linked_Lists.cpp
+       2014-11-27_Intersection_of_Two_Linked_Lists.cpp \
+       2014-12-04_Find_Peak_Element.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
