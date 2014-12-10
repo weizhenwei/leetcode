@@ -55,6 +55,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-03-21_Maximum_Subarray.cpp \
        2012-03-24_Jump_Game.cpp \
        2012-03-24_Spiral_Matrix.cpp \
+       2012-03-26_Merge_Intervals.cpp \
+       2012-03-27_Insert_Interval.cpp \
        2012-03-27_Length_of_Last_Word.cpp \
        2012-03-27_Permutation_Sequence.cpp \
        2012-03-27_Rotate_list.cpp \
