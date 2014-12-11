@@ -87,6 +87,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-06-27_Reverse_Linked_List_II.cpp \
        2012-08-27_Binary_Tree_Inorder_Traversal.cpp \
        2012-08-27_Unique_Binary_Search_Trees.cpp \
+       2012-08-30_Interleaving_String.cpp \
        2012-08-31_Validate_Binary_Search_Tree.cpp \
        2012-09-03_Same_Tree.cpp \
        2012-09-23_Symmetric_Tree.cpp \
