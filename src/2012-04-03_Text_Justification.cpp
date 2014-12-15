@@ -77,6 +77,8 @@
 using std::vector;
 using std::string;
 
+// originates from:
+// https://oj.leetcode.com/discuss/13610/share-my-concise-c-solution-less-than-20-lines
 class Solution_Text_Justification {
 public:
     vector<string> fullJustify(vector<string> &words, int L) {
