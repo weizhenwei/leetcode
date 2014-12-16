@@ -69,6 +69,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-02_Valid_Number.cpp \
        2012-04-02_Plus_One.cpp \
        2012-04-03_Climbing_Stairs.cpp \
+       2012-04-03_Simplify_Path.cpp \
        2012-04-03_Sqrt.cpp \
        2012-04-03_Text_Justification.cpp \
        2012-04-05_Set_Matrix_Zeroes.cpp \
