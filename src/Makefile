@@ -72,6 +72,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-04-03_Simplify_Path.cpp \
        2012-04-03_Sqrt.cpp \
        2012-04-03_Text_Justification.cpp \
+       2012-04-04_Edit_Distance.cpp \
        2012-04-05_Set_Matrix_Zeroes.cpp \
        2012-04-06_Search_a_2D_Matrix.cpp \
        2012-04-08_Sort_Colors.cpp \
