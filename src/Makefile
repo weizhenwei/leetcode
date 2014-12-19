@@ -3,6 +3,7 @@ CXX = g++
 CXXFLAGS = -g -I. -std=c++0x
 
 SRCS = 2011-03-13_Two_Sum.cpp \
+       2011-03-27_Median_of_Two_Sorted_Arrays.cpp \
        2011-05-15_Longest_Substring_Without_Repeating_Characters.cpp \
        2011-11-01_Add_Two_Numbers.cpp \
        2011-11-11_Longest_Palindromic_Substring.cpp \
