@@ -118,6 +118,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2012-10-30_Best_Time_to_Buy_and_Sell_Stock.cpp \
        2012-10-30_Best_Time_to_Buy_and_Sell_Stock_II.cpp \
        2012-11-06_Best_Time_to_Buy_and_Sell_Stock_III.cpp \
+       2012-11-07_Binary_Tree_Maximum_Path_Sum.cpp \
        2013-01-12_Valid_Palindrome.cpp \
        2013-02-18_Sum_Root_to_Leaf_Numbers.cpp \
        2013-10-28_Linked_List_Cycle.cpp \
