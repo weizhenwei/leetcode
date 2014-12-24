@@ -65,6 +65,8 @@
 using std::vector;
 using std::string;
 
+// originate from:
+// https://oj.leetcode.com/discuss/6618/ac-in-84ms-by-using-dfs
 class Solution_Word_Search {
 private:
     vector<vector<char> > *board;
