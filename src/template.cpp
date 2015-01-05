@@ -44,7 +44,7 @@
  * Output: index1=1, index2=2
  *
  *
- * Date: 2014.10.21
+ * Date: 2015.01.21
  *
  * Author: weizhenwei <weizhenwei1988@gmail.com>
  *
