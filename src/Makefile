@@ -138,6 +138,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        2014-12-04_Find_Peak_Element.cpp \
        new_names/79-Word_Search.cpp \
        new_names/169-Majority_Element.cpp \
+       new_names/171-Excel_Sheet_Column_Number.cpp \
        new_names/172-Factorial_Trailing_Zeroes.cpp
 
 
