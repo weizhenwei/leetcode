@@ -106,7 +106,10 @@ public:
 
         int start = i;
         int end = start + 1;
-        int total = T.size();
+        int total = T.size() - 1;  // already have one at S[start];
+        if (total == 0) {
+            return string(end - start, S[start]);
+        }
         int minlength = INT_MAX;
         string result = string("");
         while (end < S.size()) {
@@ -118,18 +121,24 @@ public:
                 char target = (*iter).first;
                 int num = charset[target];
                 int current = workingSet[target];
-                workingSet[target]++;
                 if (current < num) {
+                    workingSet[target]++;
                     if (--total == 0) {
                         string candidate = string(S.begin() + start,
-                                S.begin() + end);
+                                S.begin() + end + 1);
                         if (candidate.size() < minlength) {
                             result = candidate;
                             minlength = candidate.size();
                         }
+                        
+                        // remove the first element;
+                        char first = S[start];
+                        workingSet[first]--;
+                        total++;
 
+                        // moving start forward;
                         int j = start + 1;
-                        while (j < S.size()) {
+                        while (j < S.size()) {  // first next start position;
                             map<char, int>::iterator iter = charset.find(S[j]);
                             if (iter != charset.end()) {
                                 char target = (*iter).first;
@@ -146,12 +155,42 @@ public:
                         if (j == S.size()) {
                             return result;
                         }
-                        end = start + 1;
+                        start = j;
+                        end++;
 
                     } else {
                         end++;
                     }
                 } else {
+                    assert(current == num);
+                    int k = start;
+                    while (k < end) {
+                        if (S[k] == target) {
+                            break;
+                        }
+                        k++;
+                    }
+                    if (k > start) {
+                        char sStart = S[start];
+                        if (sStart != target) {
+                            workingSet[sStart]--;
+                            total++;
+                        }
+                    }
+                    start = k + 1;
+
+                    int j = start;
+                    while (j <= end) {
+                        map<char, int>::iterator iter = charset.find(S[j]);
+                        if (iter != charset.end()) {
+                            break;
+                        }
+                        j++;
+                    }
+                    if (j == S.size()) {
+                        return result;
+                    }
+                    start = j;
                     end++;
                 }
             }
@@ -166,6 +205,48 @@ int main(int argc, char *argv[]) {
     string S = "ADOBECODEBANC";
     string T = "ABC";
     string result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    S = "caae";
+    T = "cae";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    S = "acbbaca";
+    T = "aba";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    S = "ADOBECODEBANC";
+    T = "ABCC";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    T = "ABX";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    T = "AB";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
+    printf("%s\n", result.c_str());
+
+    S = "A";
+    T = "A";
+    result = solution.minWindow(S, T);
+    printf("S:%s\n", S.c_str());
+    printf("T:%s\n", T.c_str());
     printf("%s\n", result.c_str());
 
     return 0;
