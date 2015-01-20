@@ -140,6 +140,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/79-Word_Search.cpp \
        new_names/84-Largest_Rectangle_in_Histogram.cpp \
        new_names/85-Maximal_Rectangle.cpp \
+       new_names/87-Scramble_String.cpp \
        new_names/168-Excel_Sheet_Column_Title.cpp \
        new_names/169-Majority_Element.cpp \
        new_names/171-Excel_Sheet_Column_Number.cpp \
