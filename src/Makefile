@@ -145,6 +145,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/152-Maximum_Product_Subarray.cpp \
        new_names/168-Excel_Sheet_Column_Title.cpp \
        new_names/169-Majority_Element.cpp \
+       new_names/165-Compare_Version_Numbers.cpp \
        new_names/171-Excel_Sheet_Column_Number.cpp \
        new_names/172-Factorial_Trailing_Zeroes.cpp \
        new_names/173-Binary_Search_Tree_Iterator.cpp \
