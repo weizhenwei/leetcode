@@ -142,6 +142,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/85-Maximal_Rectangle.cpp \
        new_names/87-Scramble_String.cpp \
        new_names/93-Restore_IP_Addresses.cpp \
+       new_names/95-Unique_Binary_Search_Trees_II.cpp \
+       new_names/99-Recover_Binary_Search_Tree.cpp \
        new_names/152-Maximum_Product_Subarray.cpp \
        new_names/168-Excel_Sheet_Column_Title.cpp \
        new_names/169-Majority_Element.cpp \
