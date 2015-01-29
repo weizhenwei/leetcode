@@ -53,10 +53,12 @@
 
 #include <stdio.h>
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
 using std::string;
+using std::unordered_map;
 using std::unordered_set;
 using std::vector;
 
@@ -132,32 +134,70 @@ public:
             }
         }  // for
 
-        vector<elem> dp;
+        vector<elem> dp1;
+        vector<elem> dp2;
         for (int i = minLen; i <= maxLen; i++) {
             string substr = s.substr(0, i);
             if (dict.find(substr) != dict.end()) {
-                printf("substr = %s, i = %d\n", substr.c_str(), i);
                 struct elem e(substr, i);
-                dp.push_back(e);
+                dp1.push_back(e);
             }
         }  // for
 
         while (1) {
             vector<elem>::iterator iter;
-            for (iter = dp.begin(); iter != dp.end(); iter++) {
+            for (iter = dp1.begin(); iter != dp1.end(); iter++) {
                 int position = (*iter).position;
+                if (position > s.size()) {
+                    continue;
+                }
                 for (int i = minLen; i <= maxLen; i++) {
                     string substr = s.substr(position, i);
-                    if (dict.find(substr) != dict.end()) {
-                        printf("ssssubstr = %s, i = %d\n", substr.c_str(), i);
+                    if (substr.size() >= minLen) {
+                        if (dict.find(substr) != dict.end()) {
+                            struct elem e((*iter).sentence + " " + substr,
+                                    position + i);
+                            dp2.push_back(e);
+                        }
+                    } else if (substr.size() == 0) {
+                        struct elem e((*iter).sentence, position);
+                        dp2.push_back(e);
                     }
                 }  // for i
             }  // for iter
 
-            break;
+            if (dp2.size() == 0) {
+                break;
+            } else {
+                vector<elem>::iterator iter;
+                int full = 0; 
+                for (iter = dp2.begin(); iter != dp2.end(); iter++) {
+                    if ((*iter).position < s.size()) {
+                        break;
+                    }
+                    full++;
+                }
+                if (full == dp2.size()) {
+                    break;
+                } else {
+                    swap(dp1, dp2);
+                    dp2.clear();
+                }
+            }
+        }  // while
+
+        vector<string> result;
+        vector<elem>::iterator eiter;
+        unordered_map<string, bool> tmp;
+        for (eiter = dp2.begin(); eiter != dp2.end(); eiter++) {
+            string s = (*eiter).sentence;
+            if (tmp.find(s) == tmp.end()) {
+                result.push_back((*eiter).sentence);
+                tmp[s] = true;
+            }
         }
 
-        return vector<string>();
+        return result;
     }
 };
 
@@ -175,6 +215,14 @@ int main(int argc, char *argv[]) {
         printf("%s\n", result[i].c_str());
     }
 
+    s = "aaaaaaa";
+    dict.clear();
+    dict.insert("aaaa");
+    dict.insert("aaa");
+    result = solution.wordBreak(s, dict);
+    for (int i = 0; i < result.size(); i++) {
+        printf("%s\n", result[i].c_str());
+    }
     return 0;
 }
 
