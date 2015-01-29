@@ -110,12 +110,6 @@ public:
         }
     }
 
-    typedef struct elem {
-        string sentence;
-        int position;
-        elem(string s, int p): sentence(s), position(p) {}
-    } elem;
-
     vector<string> wordBreak(string s, unordered_set<string> &dict) {
         if (s.size() == 0 || dict.size() == 0) {
                 return vector<string>();
@@ -144,10 +138,13 @@ public:
         }  // for
 
         while (1) {
-            unordered_map<string, int>::iterator iter;
-            for (iter = dp1.begin(); iter != dp1.end(); iter++) {
+            unordered_map<string, int>::iterator iter = dp1.begin();
+            while (iter != dp1.end()) {
                 int position = (*iter).second;
-                if (position > s.size()) {
+                if (position > s.size() ||
+                        ((position > s.size() - minLen) && (position < s.size()))) {
+                    dp1.erase(iter);
+                    iter = dp1.begin();
                     continue;
                 }
                 for (int i = minLen; i <= maxLen; i++) {
@@ -166,6 +163,8 @@ public:
                         }
                     }
                 }  // for i
+                dp1.erase(iter);
+                iter = dp1.begin();
             }  // for iter
 
             if (dp2.size() == 0) {
