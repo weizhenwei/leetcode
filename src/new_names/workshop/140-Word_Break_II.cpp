@@ -65,13 +65,21 @@ using std::vector;
 
 class Solution_Word_Break_II {
 private:
+    unordered_map<int, bool> dictLength;
+
     bool subWordBreak(vector<string> &results, string s,
             unordered_set<string> &dict) {
         if (s.size() == 0) {
             return true;
         }
 
-        for (int i = 1; i <= s.size(); i++) {
+        unordered_map<int, bool>::iterator iter;
+        for (iter = dictLength.begin(); iter != dictLength.end(); iter++) {
+            int i = (*iter).first;  // length;
+            if (i > s.size()) {
+                continue;
+            }
+
             string substr = s.substr(0, i);
             if (dict.find(substr) != dict.end()) {
                 vector<string> subresult;
@@ -98,6 +106,16 @@ private:
 public:
     // it's obvious that recursive version will cause TLE.
     vector<string> wordBreakRecursive(string s, unordered_set<string> &dict) {
+
+        // first init dictLength;
+        dictLength.clear();
+        unordered_set<string>::iterator iter;
+        for (iter = dict.begin(); iter != dict.end(); iter++) {
+            if (dictLength.find((*iter).size()) == dictLength.end()) {
+                dictLength[(*iter).size()] = true;
+            }
+        }  //  for
+
         vector<string> results;
         if (s.size() == 0) {
             return results;
@@ -206,7 +224,8 @@ int main(int argc, char *argv[]) {
     dict.insert("and");
     dict.insert("sand");
     dict.insert("dog");
-    vector<string> result = solution.wordBreak(s, dict);
+    // vector<string> result = solution.wordBreak(s, dict);
+    vector<string> result = solution.wordBreakRecursive(s, dict);
     for (int i = 0; i < result.size(); i++) {
         printf("%s\n", result[i].c_str());
     }
@@ -225,7 +244,8 @@ int main(int argc, char *argv[]) {
     dict.clear();
     dict.insert("aaaa");
     dict.insert("aa");
-    result = solution.wordBreak(s, dict);
+    // result = solution.wordBreak(s, dict);
+    result = solution.wordBreakRecursive(s, dict);
     for (int i = 0; i < result.size(); i++) {
         printf("%s\n", result[i].c_str());
     }
