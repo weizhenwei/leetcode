@@ -128,7 +128,8 @@ public:
         }
     }
 
-    vector<string> wordBreak(string s, unordered_set<string> &dict) {
+    // this iterative version cause MLE.
+    vector<string> wordBreakIterative(string s, unordered_set<string> &dict) {
         if (s.size() == 0 || dict.size() == 0) {
                 return vector<string>();
         }
@@ -212,6 +213,29 @@ public:
         }
 
         return result;
+    }
+
+    // originates from:
+    // https://oj.leetcode.com/discuss/22897/share-my-14ms-short-iterative-c-solution
+    vector<string> wordBreak(string s, unordered_set<string> &dict) {
+        vector<vector<string> > m(s.size() + 1, vector<string>());
+        m[s.size()].push_back("");
+
+        for (int idx = s.size(); idx > 0; idx--) {
+            for (int i = idx - 1; i >= 0; i--) {
+                if (dict.find(s.substr(i, idx - i)) != dict.end()) {
+                    for (string &temp:m[idx]) {
+                        if (idx != s.size()) {
+                            m[i].push_back(s.substr(i, idx-i) + " " + temp);
+                        } else {
+                            m[i].push_back(s.substr(i, idx-i));
+                        }
+                    }  // for string
+                }  // if
+            }  // for i
+        }  // fir idx
+
+        return m[0];
     }
 };
 
