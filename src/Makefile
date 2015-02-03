@@ -146,6 +146,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/99-Recover_Binary_Search_Tree.cpp \
        new_names/115-Distinct_Subsequences.cpp \
        new_names/128-Longest_Consecutive_Sequence.cpp \
+       new_names/134-Gas_Station.cpp \
        new_names/139-Word_Break.cpp \
        new_names/140-Word_Break_II.cpp \
        new_names/152-Maximum_Product_Subarray.cpp \
