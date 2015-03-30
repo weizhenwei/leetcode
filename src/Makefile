@@ -157,6 +157,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/172-Factorial_Trailing_Zeroes.cpp \
        new_names/173-Binary_Search_Tree_Iterator.cpp \
        new_names/179-Largest_Number.cpp \
+       new_names/189-Rotate_Array.cpp \
        new_names/191-Number_of_1_Bits.cpp
 
 
