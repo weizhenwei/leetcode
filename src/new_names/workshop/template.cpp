@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (c) 2014, weizhenwei
+ * Copyright (c) 2015, weizhenwei
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
