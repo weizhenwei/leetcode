@@ -75,22 +75,35 @@ public:
 
         int left = 1;
         int right = n;
-        int middle = (left + right) / 2;
-        while (left <= right) {
+        // for the integer overflow protection;
+        int middle = ((long int)((long int)left + (long int)right)) / 2;
+        while (left < right) {
             if (isBadVersion(middle)) {
-                if (middle > 1 && !isBadVersion(middle - 1)) {
+                if (middle > 1) {
+                    if (!isBadVersion(middle - 1)) {
+                        return middle;
+                    } else {
+                        right = middle - 1;
+                    }
+                    middle = ((long int)((long int)left + (long int)right)) / 2;
+                } else {
                     return middle;
                 }
-                right = middle - 1;
-                middle = (left + right) / 2;
             } else {
-                if (middle < n && isBadVersion(middle + 1)) {
+                if (middle < n) {
+                    if (isBadVersion(middle + 1)) {
+                        return middle + 1;
+                    } else {
+                        left = middle + 1;
+                    }
+                    middle = ((long int)((long int)left + (long int)right)) / 2;
+                } else {
                     return middle;
                 }
-                left = middle + 1;
-                middle = (left + right) / 2;
             }
-        }
+        }  // while
+
+        return middle;
     }
 private:
     int m_iBadVersion;
@@ -98,11 +111,11 @@ private:
 
 void testcase() {
     Solution_First_Bad_Version solution;
-    int firstBad = 3;
-    int version = 3;
+    int firstBad = 1702766719; 
+    int version = 2126753390;
     solution.setBadVersion(firstBad);
     int foundBadVersion = solution.firstBadVersion(version);
-    printf("firstBadVersion = %d, version = %d, found firstBadVersion = %d\n",
+    printf("firstBadVersion = %d, version = %d, found firstBadVersion = %d\n\n",
             firstBad, version, foundBadVersion);
 
     for (int i = 1; i < 10; i++) {

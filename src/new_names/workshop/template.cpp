@@ -57,6 +57,14 @@ class Solution {
 public:
 };
 
+void testcase() {
+
+
+
+}
+
 int main(int argc, char *argv[]) {
+    testcase();
+
     return 0;
 }
