@@ -28,10 +28,10 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * File: 173-Binary_Search_Tree_Iterator.cpp
+ * File: 173-Binary_Search.cpp
  *
  *
- * Brief: https://oj.leetcode.com/problems/binary-search-tree-iterator/
+ * Brief: https://oj.leetcode.com/problems/binary-search/
  * Given an array of integers, find two numbers such that they add up to a
  * specific target number. The function twoSum should return indices of the
  * two numbers such that they add up to the target, where index1 must be
@@ -44,7 +44,7 @@
  * Output: index1=1, index2=2
  *
  *
- * Date: 2015.01.21
+ * Date: 2015.09.11
  *
  * Author: weizhenwei <weizhenwei1988@gmail.com>
  *
