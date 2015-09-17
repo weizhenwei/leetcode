@@ -52,6 +52,7 @@
  */
 
 #include <stdio.h>
+#include <stack>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -59,6 +60,7 @@
 using std::string;
 using std::ostringstream;
 using std::vector;
+using std::stack;
 
 // definition for binary tree;
 typedef struct TreeNode {
@@ -96,6 +98,71 @@ public:
         for (int i= 0; i < rightTree.size(); i++) {
             results.push_back(strRoot + "->" + rightTree[i]);
         }
+
+        return results;
+    }
+
+    typedef struct StackElement {
+        TreeNode *node;
+        string str;
+        StackElement(TreeNode *_node, string _str) : node(_node), str(_str) {}
+    } StackElement;
+
+    vector<string> binaryTreePathsIterative(TreeNode *root) {
+        vector<string> results;
+        if (root == NULL) {
+            return results;
+        }
+
+        ostringstream ostr;
+        ostr << root->val;
+        string strRoot = ostr.str();
+        if (root->left == NULL && root->right == NULL) {
+            results.push_back(strRoot);
+            return results;
+        }
+
+        stack<StackElement> Stack;
+        StackElement rootElement = StackElement(root, strRoot);
+        Stack.push(rootElement);
+        while (!Stack.empty()) {
+            StackElement topElement = Stack.top();
+            if (topElement.node->left == NULL
+                    && topElement.node->right == NULL) {
+                results.push_back(topElement.str);
+                Stack.pop();
+                continue;
+            }
+
+            StackElement leftElement(NULL, "");
+            bool left = false;
+            if (topElement.node->left) {
+                left = true;
+                ostringstream ostr;
+                ostr << topElement.node->left->val;
+                string nodeStr = ostr.str();
+                leftElement = StackElement(topElement.node->left,
+                        topElement.str + "->" + nodeStr);
+            }
+            StackElement rightElement(NULL, "");
+            bool right = false;
+            if (topElement.node->right) {
+                right = true;
+                ostringstream ostr;
+                ostr << topElement.node->right->val;
+                string nodeStr = ostr.str();
+                rightElement = StackElement(topElement.node->right,
+                        topElement.str + "->" + nodeStr);
+            }
+
+            Stack.pop();
+            if (left) {
+                Stack.push(leftElement);
+            }
+            if (right) {
+                Stack.push(rightElement);
+            }
+        }  // while
 
         return results;
     }
@@ -137,6 +204,11 @@ void testcase() {
     vector<string> paths = solution.binaryTreePaths(root);
     for (int i = 0; i < paths.size(); i++) {
         printf("%s\n", paths[i].c_str());
+    }
+
+    vector<string> pathss = solution.binaryTreePathsIterative(root);
+    for (int i = 0; i < pathss.size(); i++) {
+        printf("%s\n", pathss[i].c_str());
     }
 }
 
