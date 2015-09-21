@@ -90,6 +90,34 @@ public:
         return root;
     }
 
+    TreeNode* invertTreeIterative(TreeNode* root) {
+        if (root == NULL || (root->left == NULL && root->right == NULL)) {
+            return root;
+        }
+
+        stack<TreeNode*> theStack;
+        theStack.push(root);
+        while (!theStack.empty()) {
+            TreeNode *topNode = theStack.top();
+            if (topNode->left == NULL && topNode->right == NULL) {
+                theStack.pop();
+            } else {
+                TreeNode *tmpNode = topNode->left;
+                topNode->left = topNode->right;
+                topNode->right = tmpNode;
+                
+                theStack.pop();
+                if (topNode->left) {
+                    theStack.push(topNode->left);
+                }
+                if (topNode->right) {
+                    theStack.push(topNode->right);
+                }
+            }
+        }  // while
+
+        return root;
+    }
 };
 
 static void print_tree(TreeNode *root) {
