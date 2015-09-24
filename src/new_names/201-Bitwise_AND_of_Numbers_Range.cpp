@@ -46,6 +46,7 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 
 class Solution_Bitwise_AND_of_NUmbers_Range {
 public:
@@ -59,13 +60,33 @@ public:
         int range = rangeBitwiseAnd(m >> 1, n >> 1);
         return range << 1;
     }
+
+    int rangeBitwiseAnd_Iterative(int m, int n) {
+        if (m == n) {
+            return m;
+        }
+
+        int bit = 0;
+        while (m != n) {
+            m >>= 1;
+            n >>= 1;
+            bit++;
+        }
+
+        return m * pow(2, bit);
+    }
 };
 
 void testcase() {
     Solution_Bitwise_AND_of_NUmbers_Range solution;
     int m = 5;
     int n = 7;
-    int range = solution.rangeBitwiseAnd(m, n);
+    int range = 0;
+
+    range = solution.rangeBitwiseAnd(m, n);
+    printf("m = %d, n = %d, range = %d\n", m, n, range);
+
+    range = solution.rangeBitwiseAnd_Iterative(m, n);
     printf("m = %d, n = %d, range = %d\n", m, n, range);
 }
 
@@ -74,3 +95,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
