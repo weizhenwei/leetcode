@@ -150,16 +150,37 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/139-Word_Break.cpp \
        new_names/140-Word_Break_II.cpp \
        new_names/152-Maximum_Product_Subarray.cpp \
+       new_names/165-Compare_Version_Numbers.cpp \
        new_names/168-Excel_Sheet_Column_Title.cpp \
        new_names/169-Majority_Element.cpp \
-       new_names/165-Compare_Version_Numbers.cpp \
        new_names/171-Excel_Sheet_Column_Number.cpp \
        new_names/172-Factorial_Trailing_Zeroes.cpp \
        new_names/173-Binary_Search_Tree_Iterator.cpp \
        new_names/179-Largest_Number.cpp \
        new_names/189-Rotate_Array.cpp \
        new_names/190-Reverse_Bits.cpp \
-       new_names/191-Number_of_1_Bits.cpp
+       new_names/191-Number_of_1_Bits.cpp \
+       new_names/199-Binary_Tree_Right_Side_View.cpp \
+       new_names/201-Bitwise_AND_of_Numbers_Range.cpp \
+       new_names/202-Happy_Number.cpp \
+       new_names/206-Reverse_Linked_list.cpp \
+       new_names/217-Contains_Duplicate.cpp \
+       new_names/219-Contains_Duplicate_II.cpp \
+       new_names/226-Invert_Binary_Tree.cpp \
+       new_names/228-Summary_Ranges.cpp \
+       new_names/231-Power_of_Two.cpp \
+       new_names/237-Delete_Node_in_a_Linked_List.cpp \
+       new_names/238-Product_of_Array_Except_Self.cpp \
+       new_names/242-Valid_Anagram.cpp \
+       new_names/257-Binary_Tree_Paths.cpp \
+       new_names/258-Add_Digits.cpp \
+       new_names/263-Ugly_Number.cpp \
+       new_names/264-Ugly_Number_II.cpp \
+       new_names/268-Missing_Number.cpp \
+       new_names/273-Integer_to_English_Words.cpp \
+       new_names/278-First_Bad_Version.cpp \
+       new_names/279-Perfect_Squares.cpp \
+       new_names/283-Move_Zeroes.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
