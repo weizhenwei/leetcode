@@ -163,6 +163,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/199-Binary_Tree_Right_Side_View.cpp \
        new_names/201-Bitwise_AND_of_Numbers_Range.cpp \
        new_names/202-Happy_Number.cpp \
+       new_names/204-Count_Primes.cpp \
        new_names/206-Reverse_Linked_list.cpp \
        new_names/217-Contains_Duplicate.cpp \
        new_names/219-Contains_Duplicate_II.cpp \
