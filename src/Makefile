@@ -163,13 +163,16 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/199-Binary_Tree_Right_Side_View.cpp \
        new_names/201-Bitwise_AND_of_Numbers_Range.cpp \
        new_names/202-Happy_Number.cpp \
+       new_names/203-Remove_Linked_List_Elements.cpp \
        new_names/204-Count_Primes.cpp \
+       new_names/205-Isomorphic_Strings.cpp \
        new_names/206-Reverse_Linked_list.cpp \
        new_names/217-Contains_Duplicate.cpp \
        new_names/219-Contains_Duplicate_II.cpp \
        new_names/226-Invert_Binary_Tree.cpp \
        new_names/228-Summary_Ranges.cpp \
        new_names/231-Power_of_Two.cpp \
+       new_names/234-Palindrome_Linked_List.cpp \
        new_names/237-Delete_Node_in_a_Linked_List.cpp \
        new_names/238-Product_of_Array_Except_Self.cpp \
        new_names/242-Valid_Anagram.cpp \
