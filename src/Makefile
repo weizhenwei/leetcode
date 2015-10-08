@@ -185,7 +185,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/278-First_Bad_Version.cpp \
        new_names/279-Perfect_Squares.cpp \
        new_names/283-Move_Zeroes.cpp \
-       new_names/287-Find_the_Dumplicate_Number.cpp
+       new_names/287-Find_the_Dumplicate_Number.cpp \
+       new_names/290-Word_Pattern.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
