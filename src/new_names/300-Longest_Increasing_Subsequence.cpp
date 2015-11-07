@@ -55,11 +55,20 @@
 
 #include <stdio.h>
 #include <algorithm>
-#include <vector>
+#include <vector> 
 
 using std::max;
 using std::min;
+using std::sort;
 using std::vector;
+
+static void printVector(const vector<int>& nums) {
+    for (int i = 0; i < nums.size(); i++) {
+        printf("%d ", nums[i]);
+    }
+    printf("\n");
+}
+
 
 class Solution_Longest_Increasing_Subsequence {
 public:
@@ -80,14 +89,41 @@ public:
 
         return maxLength;
     }
-};
 
-static void printVector(const vector<int>& nums) {
-    for (int i = 0; i < nums.size(); i++) {
-        printf("%d ", nums[i]);
+
+    // currently this doesn't work well.
+    int lengthOfLIS_LCS(vector<int>& nums) {
+        if (nums.size() <= 0)
+            return 0;
+
+        vector<int> sortedNums = vector<int>(nums);
+        sort(sortedNums.begin(), sortedNums.end());
+
+        vector< vector<int> > matrix;
+        for (int i = 0; i < nums.size(); i++) {
+            vector<int> elem = vector<int>(nums.size(), 0);
+            matrix.push_back(elem);
+        }
+
+        if (nums[0] == sortedNums[0]) {
+            for (int i = 0; i < nums.size(); i++) {
+                matrix[i][0] = matrix[0][i] = 1;
+            }
+        }
+
+        for (int i = 1; i < nums.size(); i++) {
+            for (int j = 1; j < sortedNums.size(); j++) {
+                if (nums[i-1] == sortedNums[j-1]) {
+                    matrix[i][j] = matrix[i-1][j-1] + 1;
+                } else {
+                    matrix[i][j] = max(matrix[i][j-1], matrix[i-1][j]);
+                }
+            }  // for j
+        }  // for i
+
+        return matrix[nums.size()-1][sortedNums.size()-1];
     }
-    printf("\n");
-}
+};
 
 static void testcase() {
     Solution_Longest_Increasing_Subsequence solution;
@@ -105,6 +141,8 @@ static void testcase() {
     printVector(nums);
     int length = solution.lengthOfLIS(nums);
     printf("lengthOfLIS = %d\n", length);
+    length = solution.lengthOfLIS_LCS(nums);
+    printf("lengthOfLIS_LCS = %d\n", length);
 
     nums.clear();
     nums.push_back(10);
@@ -120,6 +158,8 @@ static void testcase() {
     printVector(nums);
     length = solution.lengthOfLIS(nums);
     printf("lengthOfLIS = %d\n", length);
+    length = solution.lengthOfLIS_LCS(nums);
+    printf("lengthOfLIS_LCS = %d\n", length);
 
     nums.clear();
     nums.push_back(1);
@@ -135,6 +175,8 @@ static void testcase() {
     printVector(nums);
     length = solution.lengthOfLIS(nums);
     printf("lengthOfLIS = %d\n", length);
+    length = solution.lengthOfLIS_LCS(nums);
+    printf("lengthOfLIS_LCS = %d\n", length);
 
     nums.clear();
     nums.push_back(1);
@@ -149,6 +191,8 @@ static void testcase() {
     printVector(nums);
     length = solution.lengthOfLIS(nums);
     printf("lengthOfLIS = %d\n", length);
+    length = solution.lengthOfLIS_LCS(nums);
+    printf("lengthOfLIS_LCS = %d\n", length);
 }
 
 int main(int argc, char *argv[]) {
