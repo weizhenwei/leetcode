@@ -101,6 +101,8 @@ public:
             }
             return middle;
         }
+
+        return 0;
     }
 };
 

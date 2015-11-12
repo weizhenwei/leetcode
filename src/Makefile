@@ -178,7 +178,7 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/242-Valid_Anagram.cpp \
        new_names/257-Binary_Tree_Paths.cpp \
        new_names/258-Add_Digits.cpp \
-       260-Single_Number_III.cpp \
+       new_names/260-Single_Number_III.cpp \
        new_names/263-Ugly_Number.cpp \
        new_names/264-Ugly_Number_II.cpp \
        new_names/268-Missing_Number.cpp \
@@ -188,9 +188,10 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/283-Move_Zeroes.cpp \
        new_names/287-Find_the_Dumplicate_Number.cpp \
        new_names/290-Word_Pattern.cpp \
-       292-Nim_Game.cpp \
+       new_names/292-Nim_Game.cpp \
        new_names/299-Bulls_and_Cows.cpp \
-       new_names/300-Longest_Increasing_Subsequence.cpp
+       new_names/300-Longest_Increasing_Subsequence.cpp \
+       new_names/303-Range_Sum_Query-Immutable.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
