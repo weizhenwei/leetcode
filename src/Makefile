@@ -191,7 +191,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/292-Nim_Game.cpp \
        new_names/299-Bulls_and_Cows.cpp \
        new_names/300-Longest_Increasing_Subsequence.cpp \
-       new_names/303-Range_Sum_Query-Immutable.cpp
+       new_names/303-Range_Sum_Query-Immutable.cpp \
+       new_names/304-Range_Sum_Query_2D-Immutable.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
