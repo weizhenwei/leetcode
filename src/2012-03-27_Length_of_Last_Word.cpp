@@ -83,6 +83,8 @@ public:
         if (i == -1) {
             return length;
         }
+
+        return 0;
     }
 };
 

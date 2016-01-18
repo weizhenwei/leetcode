@@ -83,6 +83,34 @@ public:
 
         return results;
     }
+
+    vector<int> singleNumberII(vector<int>& nums) {
+        int xorResult = 0;
+        // get the result of first & second;
+        for (int i = 0; i < nums.size(); i++) {
+            xorResult = xorResult ^ nums[i];
+        }
+
+        // get the different bits of first and second;
+        int mask = xorResult & (~(xorResult - 1));
+
+        int first = 0;
+        int second = 0;
+        // get first and second separately.
+        for (int i = 0; i < nums.size(); i++) {
+            if ((nums[i] & mask) == 0) {
+                first = first ^ nums[i];
+            } else {
+                second = second ^ nums[i];
+            }
+        }
+
+        vector<int> result;
+        result.push_back(first);
+        result.push_back(second);
+
+        return result;
+    }
 };
 
 static void printVector(vector<int> nums) {
@@ -105,6 +133,8 @@ int main(int argc, char *argv[]) {
     vector<int> results = solution.singleNumber(nums);;
     printVector(nums);
     printVector(results);
+    results = solution.singleNumberII(nums);;
+    printVector(results);
 
     nums.clear();
     nums.push_back(3);
@@ -117,6 +147,8 @@ int main(int argc, char *argv[]) {
     nums.push_back(5);
     results = solution.singleNumber(nums);;
     printVector(nums);
+    printVector(results);
+    results = solution.singleNumberII(nums);;
     printVector(results);
 
     return 0;

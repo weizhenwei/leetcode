@@ -53,6 +53,7 @@
 #include <stdio.h>
 #include <algorithm>
 #include <unordered_map>
+#include <vector>
 
 using std::max;
 using std::vector;

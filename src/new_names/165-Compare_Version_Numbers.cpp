@@ -150,6 +150,7 @@ public:
             }  // while
         }  // else
 
+        return -1;
     }
 };
 
