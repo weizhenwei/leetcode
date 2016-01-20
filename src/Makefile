@@ -193,7 +193,8 @@ SRCS = 2011-03-13_Two_Sum.cpp \
        new_names/300-Longest_Increasing_Subsequence.cpp \
        new_names/303-Range_Sum_Query-Immutable.cpp \
        new_names/304-Range_Sum_Query_2D-Immutable.cpp \
-	   new_names/326-Power-of-Three.cpp
+	   new_names/326-Power-of-Three.cpp \
+	   new_names/328-Odd_Even_Linked_List.cpp
 
 
 OBJECTS = $(SRCS:%.cpp=%.o)
